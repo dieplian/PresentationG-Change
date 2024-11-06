@@ -1,0 +1,26 @@
+.contenu {
+    background-color: #a594f9;
+    color: blue;
+}
+
+.pGauche{
+
+}
+
+.personne {
+    background-color: pink;
+    margin: 2%;
+ 
+}
+.groupePersonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+}
+
+
+.boite  {
+    margin: 5%;
+    background-color: violet;
+}

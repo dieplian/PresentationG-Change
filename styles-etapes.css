@@ -1,0 +1,37 @@
+.VM{
+    background-color: rgb(111, 187, 206);
+    margin: 10px;
+    padding: 10px;
+}
+
+.Etape{
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 15pt;
+    border-radius: 5pt;
+
+
+
+}
+
+.Etape-Titre{
+    font-size: 14pt;
+    font-weight: bolder;
+}
+
+.Code{
+    background-color: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding:  5pt; 
+    border-radius: 5pt;
+    font-stretch: ultra-expanded
+   
+
+}
+
+.Code-Chemin{
+    color: aquamarine;
+    /* background-color: blueviolet; */
+    display: inline;
+}

