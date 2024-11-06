@@ -75,3 +75,30 @@ ol{
 .Attaque.Cible {
     background-color: rgb(39, 39, 94);
 }
+
+.VM.Attaque {
+    background-color: rgb(141, 101, 141);
+    border-radius: 5pt;
+}
+
+.VM.Victime {
+    background-color: rgb(141, 101, 111);
+    border-radius: 5pt;
+}
+
+.TitreVM.Victime , .TitreVM.Attaque {
+    background-color: transparent;
+    font-size: xx-large;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.TitreVM.Victime {
+    color: rgb(104, 37, 59);
+    
+}
+
+.TitreVM.Attaque {
+    color:  rgb(80, 35, 80);
+   
+}
