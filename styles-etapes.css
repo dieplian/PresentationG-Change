@@ -9,7 +9,7 @@
     margin: 10px;
     padding: 15pt;
     border-radius: 5pt;
-
+    color: white;
 
 
 }
@@ -23,10 +23,12 @@
     background-color: black;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+    font-size: large;
     padding:  5pt; 
     border-radius: 5pt;
-    font-stretch: ultra-expanded
-   
+    font-stretch: ultra-expanded;
+    margin-top: 5px;
+   margin-bottom: 10px;
 
 }
 
@@ -34,4 +36,42 @@
     color: aquamarine;
     /* background-color: blueviolet; */
     display: inline;
+}
+
+.Victime {
+    background-color: rgb(104, 37, 59);
+
+}
+
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-stretch: ultra-expanded;
+}
+
+li {
+    padding: 5px 0 10px 7px ;
+    font-size: larger;
+}
+
+ol{
+    padding: 0 0 0 20px;
+}
+
+.DebutEtapeTitre {
+    text-decoration: solid;
+    text-transform: uppercase;
+    display: inline;
+}
+
+.Cible {
+    background-color: palevioletred;
+}
+
+.Attaque {
+    background-color: rgb(80, 35, 80);
+}
+
+.Attaque.Cible {
+    background-color: rgb(39, 39, 94);
 }
