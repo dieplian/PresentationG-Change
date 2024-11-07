@@ -6,40 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles-etapes.css">
 
-    <title>Document</title>
+    <title>Atelier</title>
 </head>
 
 <body>
     <div class="VM Victime">
-        <div class="TitreVM Victime"> Machine : Victime</div>
-       
+        <div class="TitreVM Victime"> VM Victime</div>
+
         <div class="Etape Victime">
             <div class="Etape-Titre">
                 <div class="DebutEtapeTitre">Étape 1 :</div> Se connecter à la VM de la cible
             </div>
             <ol>
                 <li>Ouvrir CMD (Invite de commande) </li>
-                <li>Entrer la commande
+                <li>Entrer la commande (respecter les majuscules)
                     <div class="Code">
-                        <div class="Code-Chemin">C:\User\utilisateur></div> ssh [utilisateur]@[adresse IP] -p
-                        [numérodeport]
+                        <div class="Code-Chemin">C:\User\utilisateur></div> ssh [utilisateur]@[nom de la
+                        VM].canadaeast.cloudapp.azure.com
                     </div>
-                </li>
 
-                <li>Appuyer sur 'y' pour confirmer</li>
-                <li>Écrire le mot de passe</li>
+                    <img src="Images/ficheAttaque.png" style="width: 500px;">
+                </li>
+                <li>Écrire le mot de passe (c'est normal si les caractères sont invisibles)</li>
+                <li>Entrer 'yes' pour confirmer la connexion</li>
+
             </ol>
 
         </div>
         <div class="Etape Victime">
             <div class="Etape-Titre">
-                <div class="DebutEtapeTitre">Étape 2 :</div> Créer l'utilisateur victime
+                <div class="DebutEtapeTitre">Étape 2 :</div> Créer l'utilisateur (cible) qui sera attaqué par l'équipe
+                adverse
             </div>
             <ol>
-                <li>Choisir un mot de passe dans la liste des mots de passe</li>
+                <li>Choisir un mot de passe dans la liste des mots de passe
+                    <img src="Images/choixMDP.png" style="width: 450px;" alt="liste de mdp">
+
+                </li>
                 <li>Créer l'utilisateur avec la commande suivante
                     <div class="Code">
-                        <div class="Code-Chemin">utilisateur@victime:~$</div> sudo adduser [nomDeLaVictime]
+                        <div class="Code-Chemin">utilisateur@victime:~$</div> sudo adduser [nomDeLaCible]
                     </div>
                 </li>
                 <li>Inscrire le mot de passe. <br>ATTENTION: On ne voit pas ce que l'on écrit</li>
@@ -52,17 +58,27 @@
 
         <div class="Etape Victime Cible">
             <div class="Etape-Titre">
-                <div class="DebutEtapeTitre">Étape 3 :</div> Se connecter avec le nouvel utilisateur
+                <div class="DebutEtapeTitre">Étape 3 :</div> Se connecter avec le compte utilisateur de la cible
             </div>
             <ol>
-                <li>Entrer la commande
+                <li>Entrer la commande suivante :
                     <div class="Code">
-                        <div class="Code-Chemin">utilisateur@victime:~$ </div> su [nomDeLaVictime]
+                        <div class="Code-Chemin">utilisateur@victime:~$ </div> su [nomDeLaCible]
                     </div>
+
+                    *** SU = Switch user
                 </li>
                 <li>Entrer le mot de passe que vous avez choisi à l'étape précédente</li>
 
+
+
+
             </ol>
+            Résultat :
+            <div class="Code">
+                paul@ghostSpider:/home/RuthTeitelbaum$
+            </div>
+
 
         </div>
 
@@ -72,12 +88,15 @@
             </div>
             <ol>
                 <li>Vérifier notre emplacement dans la VM
-                    <div class="Code">cible@victime:~$ pwd</div>
-                    ou
-                    <div class="Code">cible@victime:~$ cd/home/[nomDeLaVictime]</div>
 
-                    Nous devons être : !!!!!!!!!!
+                    <div class="Code">utilisateurCible@victime:/home/[utilisateur]$ cd $HOME</div>
+
                 </li>
+
+                Résultat :
+                <div class="Code">
+                    cible@victime:~$
+                </div>
                 <li>Créer un fichier texte avec une phrase secrète
                     <div class="Code">
                         <div class="Code-Chemin">cible@victime:~$ </div>nano reponse.txt
